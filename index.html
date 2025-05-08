@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ramkrishna Bhakta - Biodata</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #ff8aa2;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffe3ec;
+    }
+
+    /* Biodata Card */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #ff8aa2;
+    }
+
+    h2 {
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff8aa2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e06a84;
+    }
+
+    .details {
+      margin-top: 20px;
+      text-align: left;
+      display: none;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    /* Responsive Navbar */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Public_Code</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Biodata Card -->
+  <div class="container">
+    <div class="card">
+      <img src="IMG_20240711_122346.jpg" alt="Ramkrishna Bhakta" class="profile-img" />
+      <h2>Ramkrishna Bhakta</h2>
+      <p>Web Developer | India</p>
+      <button class="btn" onclick="toggleDetails()">Show More</button>
+      <div class="details" id="biodata">
+        <p><span class="label">Age:</span> 26</p>
+        <p><span class="label">Email:</span> ramkrishnabhakta0101@gmail.com</p>
+        <p><span class="label">Phone:</span> +91 8918247966</p>
+        <p><span class="label">Skills:</span> HTML, CSS, JS, Node.js</p>
+        <p><span class="label">Hobbies:</span> Travel, Tech, Music</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let show = false;
+    function toggleDetails() {
+      const details = document.getElementById("biodata");
+      const btn = document.querySelector(".btn");
+
+      show = !show;
+      if (show) {
+        details.style.display = "block";
+        btn.textContent = "Show Less";
+      } else {
+        details.style.display = "none";
+        btn.textContent = "Show More";
+      }
+    }
+  </script>
+
+</body>
+</html>
